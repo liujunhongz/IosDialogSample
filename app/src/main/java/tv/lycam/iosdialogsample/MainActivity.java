@@ -223,6 +223,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 break;
             case R.id.btn5:
                 new AlertDialog(MainActivity.this).builder()
+                        .setCanceledOnTouchOutside(false)
                         .setMsg("你现在无法接收到新消息提醒。请到系统-设置-通知中开启消息提醒")
                         .setNegativeButton("确定", new OnClickListener() {
                             @Override

@@ -91,6 +91,11 @@ public class AlertDialog {
         return this;
     }
 
+    public AlertDialog setCanceledOnTouchOutside(boolean cancel) {
+        dialog.setCanceledOnTouchOutside(cancel);
+        return this;
+    }
+
     public AlertDialog setPositiveButton(String text,
                                          final View.OnClickListener listener) {
         showPosBtn = true;
