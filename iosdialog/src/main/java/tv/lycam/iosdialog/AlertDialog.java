@@ -61,7 +61,7 @@ public class AlertDialog {
 
         // 调整dialog背景大小
         lLayout_bg.setLayoutParams(new FrameLayout.LayoutParams((int) (display
-                .getWidth() * 0.85), LinearLayout.LayoutParams.WRAP_CONTENT));
+                .getWidth() * 0.72), LinearLayout.LayoutParams.WRAP_CONTENT));
 
         return this;
     }
@@ -85,6 +85,20 @@ public class AlertDialog {
         }
         return this;
     }
+
+    public AlertDialog setMsg(String msg, int color) {
+        showMsg = true;
+        if ("".equals(msg)) {
+            txt_msg.setText("内容");
+        } else {
+            txt_msg.setText(msg);
+        }
+        if (color != 0) {
+            txt_msg.setTextColor(color);
+        }
+        return this;
+    }
+
 
     public AlertDialog setCancelable(boolean cancel) {
         dialog.setCancelable(cancel);
@@ -168,12 +182,12 @@ public class AlertDialog {
 
         if (showPosBtn && !showNegBtn) {
             btn_pos.setVisibility(View.VISIBLE);
-            btn_pos.setBackgroundResource(R.drawable.bg_alertbutton_none);
+            btn_pos.setBackgroundResource(R.drawable.bg_alertbutton_bottom);
         }
 
         if (!showPosBtn && showNegBtn) {
             btn_neg.setVisibility(View.VISIBLE);
-            btn_neg.setBackgroundResource(R.drawable.bg_alertbutton_none);
+            btn_neg.setBackgroundResource(R.drawable.bg_alertbutton_bottom);
         }
     }
 
